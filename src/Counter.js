@@ -9,6 +9,7 @@ function Counter(props) {
       <h1>Mesin Penghitung</h1>
       <p>Count : {props.count}</p>
       <button onClick={props.onIncrementClick}>Increment</button>
+      <button onClick={props.onDecrementClick}>Increment</button>
     </div>
   );
 }
@@ -23,10 +24,15 @@ function mapStatetoProps(state) {
 function mapDispatchtoProps(dispatch) {
   return {
     onIncrementClick: () => {
-      console.log("tombol di clisk");
+      console.log("tombol increment di clisk");
       const action = {type:'INCREMENT'};
       dispatch(action);
-    }
+    },
+    onDecrementClick: () => {
+        console.log("tombol decrement di clisk");
+        const action = {type:'DECREMENT'};
+        dispatch(action);
+      }
   };
 }
 
